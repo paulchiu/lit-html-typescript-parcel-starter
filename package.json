@@ -1,0 +1,27 @@
+{
+  "name": "lit-html-typescript-parcel-starter",
+  "version": "0.1.0",
+  "description": "LitHtml Typescript Parcel Starter Project",
+  "repository": "github:paulchiu/lit-html-typescript-parcel-starter",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "deploy": "now --prod --name lit-html-typescript-parcel-starter dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lit-html",
+    "typescript",
+    "parceljs"
+  ],
+  "author": "Paul Chiu",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/page": "^1.8.0",
+    "page": "^1.11.5",
+    "parcel-bundler": "^1.12.3",
+    "tachyons": "^4.10.0",
+    "typescript": "^3.6.3"
+  }
+}

@@ -13,17 +13,13 @@ export class LargeTitleLink {
   }
 
   render() {
-    const el = html`<a class="link dim gray f6 f5-ns dib mr3" href="${this.href}">${this.label}</a>`
-
-    if (this.title) {
-      el.getTemplateElement().title = this.title
-    }
-
-    if (this.isLast) {
-      el.getTemplateElement().classList.remove('mr3')
-    }
-
-    return el
+    return html`<a
+        class="link dim gray f6 f5-ns dib ${this.isLast ? '' : 'mr3'}"
+        href="${this.href}"
+        title="${this.title}"
+      >
+        ${this.label}
+      </a>`
   }
 }
 
@@ -43,7 +39,7 @@ export class LargeTitleLinkList {
     const titleLink = html`<a
         class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns"
         href="${this.href}"
-        ${this.title ? `title="${this.title}` : ''}
+        title="${this.title}"
       >
         ${this.label}
       </a>`

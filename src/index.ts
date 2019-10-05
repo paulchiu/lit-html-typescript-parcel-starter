@@ -6,10 +6,10 @@ const titleLinkList = new LargeTitleLinkList(
   'Lit-Html Typescript Parcel Starter Demo',
   '#',
   [
-    new LargeTitleLink('Home', '#'),
+    new LargeTitleLink('Home', '/'),
     new LargeTitleLink('About', '/about', true),
   ]
 )
 
 // console.log(titleLinkList.render());
-render((new LargeTitleLink('Home', '#')).render(), document.querySelector('#app'));
+render(titleLinkList.render(), document.querySelector('#app'));

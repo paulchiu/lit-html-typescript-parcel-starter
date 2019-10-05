@@ -1,6 +1,6 @@
 # Lit-Html Typescript Parcel Starter
 
-[Demo](#)
+[Demo](https://lit-html-typescript-parcel-starter.paulchiu.now.sh/)
 
 Sample starter project that uses:
 
@@ -10,7 +10,9 @@ Sample starter project that uses:
 - [Typescript](https://www.typescriptlang.org/)
 - [Parcel bundler](https://parceljs.org/)
 
-The start builds to a page that's approx. `X-kb` gzipped.
+The start builds to a page that's approx. 27kb gzipped.
+
+![Payload size](docs/images/payload.png)
 
 ## Development
 

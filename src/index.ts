@@ -1,10 +1,11 @@
 import 'tachyons'
 import page from 'page'
 import { render, html } from 'lit-html'
-import { largeTitleLink, LargeTitleLinkList } from './components/large-title-link-list'
+import { largeTitleLink, largeTitleLinkList } from './components/large-title-link-list'
 import { layout } from './components/layout'
 
-const titleLinkList = new LargeTitleLinkList(
+const appContainer = document.querySelector('#app')
+const menu = largeTitleLinkList(
   'Lit-Html Typescript Parcel Starter Demo',
   '#',
   [
@@ -12,17 +13,13 @@ const titleLinkList = new LargeTitleLinkList(
     largeTitleLink('About', '/about', true),
   ]
 )
-let body = html`<div>foo</div>`
-const appLayout = layout(titleLinkList.render(), body)
-const appContainer = document.querySelector('#app')
-render(appLayout, appContainer);
 
 page('/', () => {
-  body = html`<div>bar</div>`
-  render(layout(titleLinkList.render(), body), appContainer);
+  const body = html`<div>bar</div>`
+  render(layout(menu, body), appContainer);
 })
 page('/about', () => {
-  body = html`<div>baz</div>`
-  render(layout(titleLinkList.render(), body), appContainer);
+  const body = html`<div>baz</div>`
+  render(layout(menu, body), appContainer);
 })
 page()

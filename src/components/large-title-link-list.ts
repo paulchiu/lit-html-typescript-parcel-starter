@@ -1,8 +1,6 @@
 import { html, TemplateResult } from 'lit-html'
 
 /**
- * This is a functional component.
- *
  * @link https://tachyons.io/components/nav/large-title-link-list/index.html
  */
 export function largeTitleLink(
@@ -21,33 +19,24 @@ export function largeTitleLink(
 }
 
 /**
- * This is a class component.
- *
  * @link https://tachyons.io/components/nav/large-title-link-list/index.html
  */
-export class LargeTitleLinkList {
-  constructor(
-    protected label: string,
-    protected href: string,
-    protected list: TemplateResult[],
-    protected title?: string
-  ) {
-  }
-
-  render() {
-    const titleLink = html`<a
+export function largeTitleLinkList(
+  label: string,
+  href: string,
+  list: TemplateResult[],
+  title?: string
+): TemplateResult {
+  return html`<nav class="pa3 pa4-ns">
+      <a
         class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns"
-        href="${this.href}"
-        title="${this.title}"
+        href="${href}"
+        title="${title}"
       >
-        ${this.label}
-      </a>`
-
-    return html`<nav class="pa3 pa4-ns">
-        ${titleLink}
-        <div class="tc pb3">
-          ${this.list}
-        </div>
-      </nav>`
-  }
+        ${label}
+      </a>
+      <div class="tc pb3">
+        ${list}
+      </div>
+    </nav>`
 }

@@ -11,5 +11,4 @@ const titleLinkList = new LargeTitleLinkList(
   ]
 )
 
-// console.log(titleLinkList.render());
 render(titleLinkList.render(), document.querySelector('#app'));

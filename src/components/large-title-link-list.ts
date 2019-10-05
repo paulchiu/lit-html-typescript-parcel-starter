@@ -1,36 +1,35 @@
-import { html } from 'lit-html'
+import { html, TemplateResult } from 'lit-html'
 
 /**
+ * This is a functional component.
+ *
  * @link https://tachyons.io/components/nav/large-title-link-list/index.html
  */
-export class LargeTitleLink {
-  constructor(
-    protected label: string,
-    protected href: string,
-    public isLast: boolean = false,
-    protected title?: string
-  ) {
-  }
-
-  render() {
-    return html`<a
-        class="link dim gray f6 f5-ns dib ${this.isLast ? '' : 'mr3'}"
-        href="${this.href}"
-        title="${this.title}"
-      >
-        ${this.label}
-      </a>`
-  }
+export function largeTitleLink(
+    label: string,
+    href: string,
+    isLast: boolean = false,
+    title?: string
+): TemplateResult {
+  return html`<a
+      class="link dim gray f6 f5-ns dib ${isLast ? '' : 'mr3'}"
+      href="${href}"
+      title="${title}"
+    >
+      ${label}
+    </a>`
 }
 
 /**
+ * This is a class component.
+ *
  * @link https://tachyons.io/components/nav/large-title-link-list/index.html
  */
 export class LargeTitleLinkList {
   constructor(
     protected label: string,
     protected href: string,
-    protected list: LargeTitleLink[],
+    protected list: TemplateResult[],
     protected title?: string
   ) {
   }
@@ -47,7 +46,7 @@ export class LargeTitleLinkList {
     return html`<nav class="pa3 pa4-ns">
         ${titleLink}
         <div class="tc pb3">
-          ${this.list.map(l => l.render())}
+          ${this.list}
         </div>
       </nav>`
   }

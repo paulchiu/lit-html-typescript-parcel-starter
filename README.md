@@ -10,7 +10,7 @@ Sample starter project that uses:
 - [Typescript](https://www.typescriptlang.org/)
 - [Parcel bundler](https://parceljs.org/)
 
-The start builds to a page that's approx. 27kb gzipped.
+The starter project builds a 2-page SPA that's approx. 27kb gzipped.
 
 ![Payload size](docs/images/payload.png)
 
